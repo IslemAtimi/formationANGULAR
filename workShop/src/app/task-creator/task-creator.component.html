@@ -1,0 +1,26 @@
+<mat-form-field appearance="fill">
+  <mat-label>Description</mat-label>
+  <input [(ngModel)]="newTask.description" matInput>
+  </mat-form-field>
+  
+<select [(ngModel)]="newTask.priority">
+  <option [value]="low.value">
+    {{low.label}}
+    </option>
+    <option [value]="normal.value">
+      {{normal.label}}
+      </option>
+      <option [value]="high.value">
+        {{high.label}}
+        </option>
+</select>
+<button (click)="addTask(newTask)">
+  Add task
+  </button>
+
+  <button (click)="goTo()">clicvdsssssssssssk</button>
+
+  
+
+
+  

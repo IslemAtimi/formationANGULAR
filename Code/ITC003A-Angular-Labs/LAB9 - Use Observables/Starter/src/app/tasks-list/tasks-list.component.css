@@ -1,0 +1,14 @@
+.low {
+    color: green;
+}
+.normal {
+    color: grey;
+}
+.high {
+    color: red;
+}
+.task-container {
+    padding: 16px;
+    height: 100%; 
+    width: 100%; 
+}

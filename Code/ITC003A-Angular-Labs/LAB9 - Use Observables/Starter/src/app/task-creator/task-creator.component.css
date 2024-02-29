@@ -1,0 +1,16 @@
+
+
+.form-container {
+    margin: 32px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: stretch; 
+    min-width: 300px;
+}

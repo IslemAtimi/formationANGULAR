@@ -1,0 +1,25 @@
+
+
+
+<mat-grid-list cols="4" rowHeight="2:1">
+    <mat-grid-tile *ngFor="let task of tasks">
+        <div class="task-container" >
+            <mat-card >
+                <mat-card-title [important]="task.priority==Priority.High" [ngClass]="{'low': task.priority==Priority.Low, 
+                    'normal': task.priority==Priority.Normal,
+                    'high': task.priority==Priority.High }">
+                    {{task.description}}
+                </mat-card-title>
+                <mat-card-subtitle>{{task.completed ? '(Completed)' : '(Not completed)'}}</mat-card-subtitle>
+                <mat-card-actions>
+                    <button mat-icon-button aria-label="Delete">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </mat-card-actions>
+            </mat-card>
+
+        </div>
+        
+
+    </mat-grid-tile>
+</mat-grid-list>

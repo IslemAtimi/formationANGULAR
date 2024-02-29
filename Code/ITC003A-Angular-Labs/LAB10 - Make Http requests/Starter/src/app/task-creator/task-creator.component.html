@@ -1,0 +1,27 @@
+<div class="form-container">
+
+  <div class="form">
+ 
+    <h2>New task</h2>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Description</mat-label>
+      <input [(ngModel)]="newTask.description" matInput>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Priority</mat-label>
+      <mat-select [(ngModel)]="newTask.priority">
+        <mat-option *ngFor="let value of priorities" [value]="value">{{value | priority | uppercase}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+    <button (click)="addTask(newTask)" mat-flat-button color="primary">
+      Add task
+    </button>
+  </div>
+
+
+
+</div>

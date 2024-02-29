@@ -1,0 +1,12 @@
+
+<input placeholder="Description" [(ngModel)]="newTask.description" />
+
+<select [(ngModel)]="newTask.priority" >
+  <option *ngFor="let value of priorities" [value]="value">
+    {{value | priority | uppercase}}
+  </option>
+</select>
+
+<button (click)="addTask(newTask)">
+  Add task
+</button>

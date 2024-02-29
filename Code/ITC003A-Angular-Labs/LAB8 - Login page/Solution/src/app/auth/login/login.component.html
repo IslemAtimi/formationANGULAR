@@ -1,0 +1,57 @@
+
+<div class="form-container">
+
+<!-- TEMPLATE-DRIVEN FORM -->
+<!-- <form #loginForm="ngForm" class="form"> 
+    <h2>Login</h2>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input name="email" #email="ngModel" [(ngModel)]="login.email" matInput type="email" required email>
+        
+        <mat-error *ngIf="email.errors && email.errors['required']">Email is required</mat-error>
+        <mat-error *ngIf="email.errors && email.errors['email']">Email is not valid</mat-error> 
+
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input name="password" #password="ngModel" [(ngModel)]="login.password" matInput type="password" required>
+        <mat-error *ngIf="password.errors && password.errors['required']">Password is required</mat-error>
+
+      </mat-form-field>
+
+      <button (click)="onSubmit()" [disabled]="loginForm.invalid" mat-flat-button color="primary">
+        Login
+      </button>
+
+</form> -->
+
+<!-- MODEL-DRIVEN FORM -->
+<form [formGroup]="loginForm!" class="form"> 
+    <h2>Login</h2>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input formControlName="email" matInput type="email"  >
+        <mat-error *ngIf="getError('email','required')">Email is required</mat-error>
+        <mat-error *ngIf="getError('email','email')">Email is not valid</mat-error> 
+
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input formControlName="password" matInput type="password" >
+        <mat-error *ngIf="getError('password','required')">Password is required</mat-error>
+
+      </mat-form-field>
+
+      <button (click)="onSubmit()" [disabled]="loginForm?.invalid"  mat-flat-button color="primary">
+        Login
+      </button>
+
+</form>
+
+<div>
+
+   

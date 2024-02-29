@@ -1,0 +1,35 @@
+
+
+
+ 
+    <mat-form-field  style="margin: 16px;min-width: 300px;"  appearance="outline">
+        <mat-label>Search</mat-label>
+        <mat-icon matPrefix>search</mat-icon>
+        <input #searchInput matInput type="text" (keyup)="search$.next(searchInput.value)"  >
+      </mat-form-field>
+ 
+
+  
+
+<mat-grid-list cols="4" rowHeight="2:1">
+    <mat-grid-tile *ngFor="let task of tasks">
+        <div class="task-container" >
+            <mat-card >
+                <mat-card-title [important]="task.priority==Priority.High" [ngClass]="{'low': task.priority==Priority.Low, 
+                    'normal': task.priority==Priority.Normal,
+                    'high': task.priority==Priority.High }">
+                    {{task.description}}
+                </mat-card-title>
+                <mat-card-subtitle>{{task.completed ? '(Completed)' : '(Not completed)'}}</mat-card-subtitle>
+                <mat-card-actions>
+                    <button (click)="removeTask(task)" mat-icon-button aria-label="Delete">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </mat-card-actions>
+            </mat-card>
+
+        </div>
+        
+
+    </mat-grid-tile>
+</mat-grid-list>

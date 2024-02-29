@@ -1,0 +1,9 @@
+<ul>
+    <ul>
+        <li *ngFor="let task of tasks" [important]="task.priority==Priority.High" [ngStyle]="{'margin':'12px', 'font-size': '20px'}" [ngClass]="{'low': task.priority==Priority.Low, 
+                                                   'normal': task.priority==Priority.Normal,
+                                                   'high': task.priority==Priority.High }">
+            {{task.description}} <span *ngIf="task.priority==Priority.High">{{task.completed ? '(Completed)' : '(Not completed)'}}</span>
+        </li>
+    <ul>
+<ul>
