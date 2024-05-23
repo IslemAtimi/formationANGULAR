@@ -1,0 +1,17 @@
+<div class="flex flex-wrap mx-auto justify-around bg-white-300 bg-slate-50 ">
+<ng-container *ngFor="let item of productsList">
+    <div  (click)="gotoProduct(item.id)" class="bg-white my-3 block rounded w-72 mx-5 cursor-pointer">
+        <img
+          alt=""
+          src="{{item.thumbnail}}"
+          class="h-64 rounded w-full object-cover sm:h-80 lg:h-96"
+        />
+      
+        <h2 class="mt-4 text-lg font-bold text-gray-900 sm:text-xl">{{item.title}}</h2>
+      
+        <p class="mt-2 max-w-sm text-gray-700">
+{{item.description}}
+        </p>
+      </div>
+</ng-container>
+</div>

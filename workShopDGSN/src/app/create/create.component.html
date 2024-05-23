@@ -1,0 +1,15 @@
+<input placeholder="Description" [(ngModel)]="newTask.description"/>
+<select [(ngModel)]="newTask.priority">
+  <option [value]="low.value">
+  Low
+  </option>
+  <option [value]="normal.value">
+  Normal
+  </option>
+  <option [value]="high.value">
+  High
+  </option>
+  </select>
+<button (click)="AddTask(newTask)">
+  Add task
+  </button>

@@ -1,0 +1,10 @@
+<p>products works!</p>
+<button class="rounded border border-gray-500 bg-blue-400" (click)="add()">click for add</button>
+<button class="rounded border border-gray-500"  (click)="afficher()">click for View</button>
+<p [appUnderline]="''">angular</p>
+<ng-container *ngIf="true">
+<div *ngFor="let item of products; let i=index">
+    <p [ngClass]="{'bg-red-400':danger}">{{item.title}}</p>
+    <p>{{item.price}}</p>
+</div>
+</ng-container>
